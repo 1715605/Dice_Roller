@@ -3,4 +3,7 @@
     <item name="numberEntered" type="id" />
     <item name="msg" type="id" />
     <item name="userEntered" type="id" />
+    <item name="counter" type="id" />
+    <item name="counterView" type="id" />
+    <item name="countering" type="id" />
 </resources>

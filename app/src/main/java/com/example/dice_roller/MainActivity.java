@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView mgTv;
     private EditText userEntered;
     private Button validate;
+    private int counter = 0;
+    private TextView countering;
+    private TextView counterDP;
 
 
     @Override
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         mgTv = (TextView) findViewById(R.id.message);
         userEntered = (EditText) findViewById(R.id.userEntered);
+        countering = (TextView) findViewById(R.id.countering);
+        counterDP = (TextView) findViewById(R.id.counterView);
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Invalid input, the number is not in range", Toast.LENGTH_SHORT).show();
         } else if (n == number) {
             Toast.makeText(this, "Congrats! Number macthes", Toast.LENGTH_SHORT).show();
+            counter = counter + 1;
+            counterDP.setText(Integer.toString(counter));
         }
 
 
