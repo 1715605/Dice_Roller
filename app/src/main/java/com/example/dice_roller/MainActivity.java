@@ -18,6 +18,11 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
 
+    private TextView mgTv;
+    private EditText userEntered;
+    private Button validate;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mgTv = (TextView) findViewById(R.id.message);
+        userEntered = (EditText) findViewById(R.id.userEntered);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -63,10 +71,19 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = this.findViewById(R.id.myTextView);
 
         Random r = new Random();
-        int number = r.nextInt(6);
+        int number = r.nextInt(7);
 
         tv.setText(Integer.toString(number));
 
+
+        int n = Integer.parseInt(userEntered.getText().toString());
+
+
+        if (n < 1 || n > 6) {
+            Toast.makeText(this, "Invalid input, the number is not in range", Toast.LENGTH_SHORT).show();
+        } else if (n == number) {
+            Toast.makeText(this, "Congrats! Number macthes", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
