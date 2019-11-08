@@ -6,4 +6,5 @@
     <item name="counter" type="id" />
     <item name="counterView" type="id" />
     <item name="countering" type="id" />
+    <item name="list" type="id" />
 </resources>
